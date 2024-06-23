@@ -46,6 +46,16 @@ UClkDiv (
 	       .B_n			(B_n[CNT_BW-1:0]),
 	       .rst_n			(rst_n));
 
+ClkDiv_GCK #(.CNT_BW(CNT_BW))
+UClkDiv_GCK (
+/*AUTOINST*/
+	       // Outputs
+	       .out_clk			(out_clk_gck),
+	       // Inputs
+	       .in_clk			(clk_50M),
+	       .B_n			(B_n[CNT_BW-1:0]),
+	       .rst_n			(rst_n));
+
 `ifdef VCDDUMP
 initial begin
     $dumpfile("Test.vcd");  //
